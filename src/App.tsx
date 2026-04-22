@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type MouseEvent, useState } from 'react';
 import { ExternalLink, Mail, Calendar, Trophy, Users, Download } from 'lucide-react';
 import CursorHalo from './components/CursorHalo';
 
@@ -139,6 +139,23 @@ const projectCardBase =
   'interactive-lift group flex flex-col bg-gray-900/30 hover:bg-gray-900/60 border border-gray-800/40 border-l-2 border-l-amber-500/20 hover:border-l-amber-500 rounded-r-xl p-5 transition-all';
 
 function App() {
+  const emailAddress = 'azverndias09@gmail.com';
+  const contactSubject = 'Portfolio Inquiry';
+  const contactMailto = `mailto:${emailAddress}?subject=${encodeURIComponent(contactSubject)}`;
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}&su=${encodeURIComponent(contactSubject)}`;
+
+  const handleContactClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    window.location.href = contactMailto;
+
+    window.setTimeout(() => {
+      if (document.visibilityState === 'visible' && document.hasFocus()) {
+        window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
+      }
+    }, 700);
+  };
+
   return (
     <div className="min-h-screen pb-32">
       <CursorHalo />
@@ -187,7 +204,8 @@ function App() {
                 Creative
               </a>
               <a
-                href="mailto:azverndias09@gmail.com"
+                href={contactMailto}
+                onClick={handleContactClick}
                 className="interactive-lift flex items-center gap-2 text-gray-950 bg-amber-500 hover:bg-amber-400 transition-all px-5 py-2 rounded-lg text-sm font-semibold"
               >
                 <Mail size={16} />
