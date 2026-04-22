@@ -1,0 +1,49 @@
+Azvern Dias
+ 8262082881 # azverndias09@gmail.com ï https://www.linkedin.com/in/azverndias0912 § https://github.com/azverndias09
+Personal Summary
+Product-driven Backend Engineer specializing in event-driven architectures, multi-tenant FastAPI backends, and
+AI integrations on AWS. Combines robust engineering with a creative background in 3D to deliver scalable,
+user-centric systems.
+Education
+Goa College of Engineering Graduated May 2025
+Bachelor of Engineering in Computer Engineering Ponda, Goa
+Experience
+Cubiktech June 2025 – Present
+Backend Engineer
+• Agile Receivables Platform: Led backend development of a multi-tenant AWS system, architecting event-driven
+workflows (FastAPI, SQS, EventBridge) for asynchronous task orchestration across campaigns and webhooks.
+• Secure Architecture & Payments: Built strict data isolation (Twilio subaccounts, AWS SES) with RBAC, and integrated
+omnichannel payments (Stripe) alongside AI voice agents (Retell, Cartesia) for fully automated workflows.
+• Automated Invoicing: Built an automated invoice syncing engine integrating QuickBooks and Xero APIs to eliminate
+manual data entry across the receivables pipeline.
+• AI Agentic Framework: Engineered a modular backend (FastAPI, Docker) to orchestrate 20+ specialized AI agents
+for semantic search and GraphRAG operations, utilizing pgvector and Neo4j.
+• Stateful AI Sales Agent: Developed an automated WhatsApp bot (n8n, OpenAI, LangChain) qualifying leads via the
+SPIN framework to drive Calendar bookings, using Supabase for conversational memory.
+• GST Manager App: Developed a cross-platform Flutter app for B2B tax management using GetX and Dart.
+Integrated Razorpay for SaaS billing, secure JWT lifecycles, and Firebase Cloud Messaging.
+TP Sports Arena 2025
+Freelancer
+• Built a high-concurrency reservation platform with race-condition-safe time-slot locking, dual validation, and a
+state-driven booking system integrating PhonePe webhooks, automated refunds, and Google Calendar sync using
+Next.js and Firebase
+Sequalize 2024
+Software Engineering Intern
+• Developed a scalable event management platform using Flutter and Supabase with real-time messaging and access
+control.
+Nexocide 2022 – 2023
+Software Engineer
+• Contributed to 3D multiplayer backend mechanics (Unreal Engine) and freelanced a live e-commerce tourism app
+(Flutter, Firebase).
+Technical Skills
+Languages/Frameworks: Next.js, React, Flutter, Python, TypeScript, JavaScript, Java, Dart, SQL, C/C++
+Backend & APIs: FastAPI, Node.js, Express, PostgreSQL, Redis, Neo4j, Stripe, Twilio, QuickBooks, Xero
+Cloud & Infrastructure: AWS (Lambda, RDS, SQS, EventBridge, SES, Bedrock,SNS, EC2, KMS,), Terraform, Docker,
+Supabase, Firebase, Git
+AI / Automation: n8n, LangChain, CrewAI, OpenAI, Retell, pgvector
+Management and Achievements
+• Leadership: President of Coder’s Club & Co-founder of ARM Robotics (led a 400+ member technical community).
+Lead-coordinator of Spectrathon 2024 (National) and Technothon 2023 & 2024 (State), each hosting 50+
+participants.
+• Hackathons: Winner of Technothon 2022, Promotheus 25 and AISPIRE IEEE Hardware Hackathon (15+ teams).
+Runner-up at Inspirathon 2023, Inspirathon 2024, and Retrothon 2025.

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+body {
+  background-color: #030712;
+  background-image: radial-gradient(ellipse 80% 40% at 50% -5%, #1c1400 0%, transparent 65%);
+  min-height: 100vh;
+}
