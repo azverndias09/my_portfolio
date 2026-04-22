@@ -478,6 +478,34 @@ function App() {
           </div>
         </section>
 
+        <section className="space-y-10">
+          <SectionHeader number="05" title="Open For Freelance" />
+          <div className="group relative pl-8 border-l-2 border-gray-800 hover:border-amber-500/40 transition-colors pb-2">
+            <div className="absolute w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-gray-950 -left-2 top-1.5"></div>
+            <p className="text-base md:text-lg text-gray-200 leading-relaxed">
+              Available for freelance work in  website/app development, video editing, VFX, animation.
+            </p>
+            <p className="mt-3 text-sm md:text-base text-gray-400 leading-relaxed">
+              If you have a project in mind, send me a quick brief and I'll reply with scope and timelines :)
+            </p>
+            <div className="flex flex-wrap gap-1.5 mt-4">
+              {['Video Editing', 'VFX', 'Animation', 'Websites', 'Apps'].map((service) => (
+                <span key={service} className="font-mono text-xs text-amber-400/60 bg-amber-950/20 border border-amber-900/20 px-2 py-0.5 rounded">
+                  {service}
+                </span>
+              ))}
+            </div>
+            <a
+              href={contactMailto}
+              onClick={handleContactClick}
+              className="interactive-lift inline-flex items-center gap-2 mt-5 text-gray-950 bg-amber-500 hover:bg-amber-400 transition-all px-5 py-2 rounded-lg text-sm font-semibold"
+            >
+              <Mail size={16} />
+              Contact Me
+            </a>
+          </div>
+        </section>
+
       </div>
     </div>
   );
