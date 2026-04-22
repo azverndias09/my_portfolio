@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, Mail, Calendar, Trophy, Users, Download } from 'lucide-react';
+import CursorHalo from './components/CursorHalo';
 
 const GithubIcon = ({size = 20}: {size?: number}) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -80,7 +81,7 @@ function CubiktechProjects() {
       <div className="flex md:hidden overflow-x-auto border-b border-gray-800/60">
         {cubiktechProjects.map((proj, i) => (
           <button key={i} onClick={() => setActive(i)}
-            className={`flex-shrink-0 px-3 py-2.5 text-xs font-medium transition-colors border-r border-gray-800/40 last:border-r-0 ${
+            className={`interactive-lift flex-shrink-0 px-3 py-2.5 text-xs font-medium transition-colors border-r border-gray-800/40 last:border-r-0 ${
               active === i ? 'text-amber-400 bg-amber-500/[0.08]' : 'text-gray-500 hover:text-gray-300'
             }`}
           >{proj.title}</button>
@@ -92,7 +93,7 @@ function CubiktechProjects() {
           {cubiktechProjects.map((proj, i) => (
             <button key={i} onClick={() => setActive(i)}
               style={active === i ? { boxShadow: 'inset 2px 0 0 rgb(245 158 11 / 0.7)' } : undefined}
-              className={`text-left px-4 py-3.5 text-xs font-medium transition-all border-b border-r border-gray-800/60 last:border-b-0 leading-snug ${
+              className={`interactive-lift text-left px-4 py-3.5 text-xs font-medium transition-all border-b border-r border-gray-800/60 last:border-b-0 leading-snug ${
                 active === i ? 'text-amber-400 bg-amber-500/[0.06]' : 'text-gray-500 hover:text-gray-300 hover:bg-gray-900/30'
               }`}
             >{proj.title}</button>
@@ -103,7 +104,7 @@ function CubiktechProjects() {
           <div className="mb-3">
             {p.href ? (
               <a href={p.href} target="_blank" rel="noopener noreferrer"
-                className="font-semibold text-base text-gray-100 hover:text-amber-300 flex items-center gap-1.5 transition-colors"
+                className="interactive-lift font-semibold text-base text-gray-100 hover:text-amber-300 flex items-center gap-1.5 transition-colors"
               >
                 {p.title} <ExternalLink size={13} className="text-amber-500/50" />
               </a>
@@ -135,11 +136,12 @@ function CubiktechProjects() {
 }
 
 const projectCardBase =
-  'group flex flex-col bg-gray-900/30 hover:bg-gray-900/60 border border-gray-800/40 border-l-2 border-l-amber-500/20 hover:border-l-amber-500 rounded-r-xl p-5 transition-all';
+  'interactive-lift group flex flex-col bg-gray-900/30 hover:bg-gray-900/60 border border-gray-800/40 border-l-2 border-l-amber-500/20 hover:border-l-amber-500 rounded-r-xl p-5 transition-all';
 
 function App() {
   return (
     <div className="min-h-screen pb-32">
+      <CursorHalo />
       <div className="max-w-5xl mx-auto px-6 py-20 space-y-28">
 
         {/* Hero */}
@@ -161,7 +163,7 @@ function App() {
                 href="https://github.com/azverndias09"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all px-4 py-2 rounded-lg text-sm font-medium"
+                className="interactive-lift flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all px-4 py-2 rounded-lg text-sm font-medium"
               >
                 <GithubIcon size={16} />
                 GitHub
@@ -170,7 +172,7 @@ function App() {
                 href="https://www.linkedin.com/in/azverndias0912"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all px-4 py-2 rounded-lg text-sm font-medium"
+                className="interactive-lift flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all px-4 py-2 rounded-lg text-sm font-medium"
               >
                 <LinkedinIcon size={16} />
                 LinkedIn
@@ -179,21 +181,21 @@ function App() {
                 href="https://www.instagram.com/azz.create/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all px-4 py-2 rounded-lg text-sm font-medium"
+                className="interactive-lift flex items-center gap-2 text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all px-4 py-2 rounded-lg text-sm font-medium"
               >
                 <InstagramIcon size={16} />
                 Creative
               </a>
               <a
                 href="mailto:azverndias09@gmail.com"
-                className="flex items-center gap-2 text-gray-950 bg-amber-500 hover:bg-amber-400 transition-all px-5 py-2 rounded-lg text-sm font-semibold"
+                className="interactive-lift flex items-center gap-2 text-gray-950 bg-amber-500 hover:bg-amber-400 transition-all px-5 py-2 rounded-lg text-sm font-semibold"
               >
                 <Mail size={16} />
                 Contact Me
               </a>
               <a
                 href="/resume.pdf"
-                className="flex items-center gap-2 text-amber-400 hover:text-amber-300 border border-amber-900/60 hover:border-amber-700/60 hover:bg-amber-950/30 transition-all px-4 py-2 rounded-lg text-sm font-medium"
+                className="interactive-lift flex items-center gap-2 text-amber-400 hover:text-amber-300 border border-amber-900/60 hover:border-amber-700/60 hover:bg-amber-950/30 transition-all px-4 py-2 rounded-lg text-sm font-medium"
               >
                 <Download size={16} />
                 Resume
@@ -238,7 +240,7 @@ function App() {
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4 gap-2">
                 <div>
                   <h3 className="font-display text-xl font-bold text-gray-100">Freelancer</h3>
-                  <a href="https://www.tpsports.in/" target="_blank" rel="noopener noreferrer" className="text-amber-400 font-medium hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                  <a href="https://www.tpsports.in/" target="_blank" rel="noopener noreferrer" className="interactive-lift text-amber-400 font-medium hover:text-amber-300 transition-colors flex items-center gap-1.5">
                     TP Sports Arena
                     <ExternalLink size={13} className="text-amber-500/50" />
                   </a>
@@ -280,7 +282,7 @@ function App() {
               href="https://github.com/azverndias09"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-500/60 hover:text-amber-400 text-sm font-medium flex items-center gap-1.5 transition-colors"
+              className="interactive-lift text-amber-500/60 hover:text-amber-400 text-sm font-medium flex items-center gap-1.5 transition-colors"
             >
               All repos on GitHub <ExternalLink size={13} />
             </a>
@@ -376,7 +378,7 @@ function App() {
                   <div className="absolute w-2.5 h-2.5 rounded-full bg-amber-500 border-2 border-gray-950 -left-[6px] top-1"></div>
                   <div className="flex items-start justify-between gap-2">
                     <h4 className="font-display font-bold text-gray-200 leading-snug">Co-founder, ARM Robotics</h4>
-                    <a href="https://arms--xi.vercel.app/" target="_blank" rel="noopener noreferrer" className="shrink-0 text-xs font-mono text-amber-500/60 hover:text-amber-400 transition-colors mt-0.5">ARM Website ↗</a>
+                    <a href="https://arms--xi.vercel.app/" target="_blank" rel="noopener noreferrer" className="interactive-lift shrink-0 text-xs font-mono text-amber-500/60 hover:text-amber-400 transition-colors mt-0.5">ARM Website ↗</a>
                   </div>
                   <p className="text-gray-500 mt-1.5 text-sm leading-relaxed">Co-founded and managed a robotics club with 400+ members and gave talk sessions and self-hosted workshops in college, orphanages, and village schools - bringing hands-on robotics education beyond campus.</p>
                 </div>
@@ -384,7 +386,7 @@ function App() {
                   <div className="absolute w-2.5 h-2.5 rounded-full bg-amber-500 border-2 border-gray-950 -left-[6px] top-1"></div>
                   <div className="flex items-start justify-between gap-2">
                     <h4 className="font-display font-bold text-gray-200 leading-snug">President, Coder's Club</h4>
-                    <a href="https://www.geccoders.club/" target="_blank" rel="noopener noreferrer" className="shrink-0 text-xs font-mono text-amber-500/60 hover:text-amber-400 transition-colors mt-0.5">Coder's Club Website ↗</a>
+                    <a href="https://www.geccoders.club/" target="_blank" rel="noopener noreferrer" className="interactive-lift shrink-0 text-xs font-mono text-amber-500/60 hover:text-amber-400 transition-colors mt-0.5">Coder's Club Website ↗</a>
                   </div>
                   <p className="text-gray-500 mt-1.5 text-sm leading-relaxed">Led and managed a student technical community, organizing workshops, coding sessions, and large-scale events.</p>
                 </div>
