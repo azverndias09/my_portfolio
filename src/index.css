@@ -5,6 +5,14 @@
   --cursor-accent-rgb: 245 158 11;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-section {
+  scroll-margin-top: 7rem;
+}
+
 body {
   background-color: #030712;
   background-image: radial-gradient(ellipse 80% 40% at 50% -5%, #1c1400 0%, transparent 65%);
@@ -31,6 +39,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .interactive-lift {
     transition: none;
   }

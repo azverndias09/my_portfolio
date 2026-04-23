@@ -1,6 +1,15 @@
-import { type MouseEvent, useState } from 'react';
+import { type MouseEvent, useEffect, useState } from 'react';
 import { ExternalLink, Mail, Calendar, Trophy, Users, Download } from 'lucide-react';
 import CursorHalo from './components/CursorHalo';
+
+const sectionNavItems = [
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'leadership', label: 'Leadership' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'freelance', label: 'Freelance' },
+] as const;
 
 const GithubIcon = ({size = 20}: {size?: number}) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -143,6 +152,42 @@ function App() {
   const contactSubject = 'Portfolio Inquiry';
   const contactMailto = `mailto:${emailAddress}?subject=${encodeURIComponent(contactSubject)}`;
   const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}&su=${encodeURIComponent(contactSubject)}`;
+  const [activeSection, setActiveSection] = useState<(typeof sectionNavItems)[number]['id']>('about');
+
+  useEffect(() => {
+    const sectionElements = sectionNavItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sectionElements.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const mostVisibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (mostVisibleSection) {
+          setActiveSection(mostVisibleSection.target.id as (typeof sectionNavItems)[number]['id']);
+        }
+      },
+      {
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: [0.15, 0.35, 0.6],
+      },
+    );
+
+    sectionElements.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleSectionJump = (sectionId: (typeof sectionNavItems)[number]['id']) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const handleContactClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -159,10 +204,38 @@ function App() {
   return (
     <div className="min-h-screen pb-32">
       <CursorHalo />
-      <div className="max-w-5xl mx-auto px-6 py-20 space-y-28">
+      <nav className="sticky top-3 z-50 pt-4">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-gray-950/80 backdrop-blur-md border border-gray-800/70 rounded-xl shadow-xl shadow-black/20">
+            <ul className="flex items-center gap-1.5 overflow-x-auto px-2 py-2">
+              {sectionNavItems.map((item) => {
+                const isActive = activeSection === item.id;
+
+                return (
+                  <li key={item.id}>
+                    <button
+                      type="button"
+                      onClick={() => handleSectionJump(item.id)}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={`interactive-lift px-3.5 py-2 rounded-lg text-xs md:text-sm font-medium whitespace-nowrap border transition-colors ${
+                        isActive
+                          ? 'text-amber-300 border-amber-700/70 bg-amber-500/10'
+                          : 'text-gray-400 border-transparent hover:text-gray-200 hover:bg-gray-900/70'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className="max-w-5xl mx-auto px-6 pt-12 space-y-28">
 
         {/* Hero */}
-        <header className="flex flex-col md:flex-row gap-10 md:gap-16 items-start justify-between">
+        <header id="about" className="scroll-section flex flex-col md:flex-row gap-10 md:gap-16 items-start justify-between">
           <div className="flex-1 space-y-7">
             <div className="space-y-4">
               <div className="pb-5 border-b border-amber-500/30">
@@ -230,7 +303,7 @@ function App() {
         </header>
 
         {/* Experience */}
-        <section className="space-y-10">
+        <section id="experience" className="scroll-section space-y-10">
           <SectionHeader number="01" title="Experience" />
 
           <div className="space-y-10">
@@ -293,7 +366,7 @@ function App() {
         </section>
 
         {/* Projects */}
-        <section className="space-y-10">
+        <section id="projects" className="scroll-section space-y-10">
           <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
             <SectionHeader number="02" title="Projects" />
             <a
@@ -381,7 +454,7 @@ function App() {
         </section>
 
         {/* Leadership & Hackathons */}
-        <section className="space-y-10">
+        <section id="leadership" className="scroll-section space-y-10">
           <SectionHeader number="03" title="Hackathons & Leadership" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -458,7 +531,7 @@ function App() {
         </section>
 
         {/* Skills */}
-        <section className="space-y-8">
+        <section id="skills" className="scroll-section space-y-8">
           <SectionHeader number="04" title="Technical Arsenal" />
           <div>
             {[
@@ -478,7 +551,7 @@ function App() {
           </div>
         </section>
 
-        <section className="space-y-10">
+        <section id="freelance" className="scroll-section space-y-10">
           <SectionHeader number="05" title="Open For Freelance" />
           <div className="group relative pl-8 border-l-2 border-gray-800 hover:border-amber-500/40 transition-colors pb-2">
             <div className="absolute w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-gray-950 -left-2 top-1.5"></div>
