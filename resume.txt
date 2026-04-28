@@ -1,7 +1,7 @@
 Azvern Dias
  8262082881 # azverndias09@gmail.com ï https://www.linkedin.com/in/azverndias0912 § https://github.com/azverndias09
 Personal Summary
-Product-driven Backend Engineer specializing in event-driven architectures, multi-tenant FastAPI backends, and
+Product-driven Software Engineer specializing in event-driven architectures, multi-tenant FastAPI backends, and
 AI integrations on AWS. Combines robust engineering with a creative background in 3D to deliver scalable,
 user-centric systems.
 Education
@@ -9,7 +9,7 @@ Goa College of Engineering Graduated May 2025
 Bachelor of Engineering in Computer Engineering Ponda, Goa
 Experience
 Cubiktech June 2025 – Present
-Backend Engineer
+Software Engineer
 • Agile Receivables Platform: Led backend development of a multi-tenant AWS system, architecting event-driven
 workflows (FastAPI, SQS, EventBridge) for asynchronous task orchestration across campaigns and webhooks.
 • Secure Architecture & Payments: Built strict data isolation (Twilio subaccounts, AWS SES) with RBAC, and integrated
