@@ -54,14 +54,16 @@ const cubiktechProjects: Project[] = [
   {
     title: "Agile Receivables Platform",
     href: "https://agilereceivables.com/",
-    body: "Led backend development of a multi-tenant AWS receivables platform designed for concurrent multi-tenant scale.",
-    sub: [
-      { label: "Campaign Engine", text: "Architected an event-driven campaign engine (SQS, EventBridge) for asynchronous multi-channel campaign orchestration and webhook processing across isolated tenant environments." },
-      { label: "Payments", text: "Built Stripe and Stripe Connect integration for subscription management, automated payment workflows, and multi-tenant payment routing; enforced data isolation with RBAC, AWS KMS, Twilio subaccounts, and SES — zero cross-tenant leakage by design." },
-      { label: "AI Voice Agents", text: "Deployed automated AI voice call agents (Retell, Cartesia) for outbound debt collection workflows, reducing manual follow-up overhead." },
-      { label: "Accounting Sync", text: "Built a QuickBooks/Xero sync engine architected for 10,000+ invoice operations, eliminating manual reconciliation — validated through client onboarding demos." },
-    ],
+    body: "Led backend development of a multi-tenant AWS receivables platform - architecting an event-driven campaign engine (SQS, EventBridge) for asynchronous multi-channel campaign orchestration across isolated tenant environments. Built Stripe and Stripe Connect integration for subscription management, automated payment workflows, and multi-tenant payment routing, with strict data isolation via RBAC, AWS KMS, Twilio subaccounts, and SES. Deployed automated AI voice call agents (Retell, Cartesia) for outbound debt collection, and a QuickBooks/Xero sync engine handling 10,000+ invoice operations - eliminating manual reconciliation entirely.",
+    sub: [],
     tags: ["FastAPI", "SQS", "EventBridge", "Stripe Connect", "Twilio", "Retell"],
+  },
+  {
+    title: "Stateful AI Sales Agent",
+    href: undefined as string | undefined,
+    body: "Built an automated WhatsApp sales agent (n8n, OpenAI, LangChain) with intent classification, next-best-action recommendations, and graph memory for contextual intelligence - qualifying leads via the SPIN framework to drive calendar bookings, with Supabase for conversational state.",
+    sub: [],
+    tags: ["n8n", "OpenAI", "LangChain", "Supabase"],
   },
   {
     title: "AI Agentic Framework",
@@ -69,13 +71,6 @@ const cubiktechProjects: Project[] = [
     body: "Engineered a modular backend orchestrating 20+ specialized AI agents for semantic search and GraphRAG operations (pgvector, Neo4j).",
     sub: [],
     tags: ["Python", "pgvector", "Neo4j", "GraphRAG"],
-  },
-  {
-    title: "Stateful AI Sales Agent",
-    href: undefined as string | undefined,
-    body: "Built an automated WhatsApp sales agent (n8n, OpenAI, LangChain) with intent classification, next-best-action recommendations, and graph memory for contextual intelligence — qualifying leads via the SPIN framework to drive calendar bookings, with Supabase for conversational state.",
-    sub: [],
-    tags: ["n8n", "OpenAI", "LangChain", "Supabase"],
   },
   {
     title: "GST Manager App",
@@ -154,7 +149,7 @@ function CubiktechProjects() {
             <div className="mt-3 ml-3 pl-3 border-l border-gray-800 space-y-1.5">
               {p.sub.map((s, i) => (
                 <p key={i} className="text-gray-500 text-xs leading-relaxed">
-                  <span className="text-gray-400 font-medium">{s.label} — </span>{s.text}
+                  <span className="text-gray-400 font-medium">{s.label} - </span>{s.text}
                 </p>
               ))}
             </div>
@@ -595,7 +590,7 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
-                <span className="text-amber-500/50 mr-2">—</span>Built a high-concurrency reservation platform with race-condition-safe time-slot locking, dual validation, and a state-driven booking system integrating PhonePe webhooks, automated refunds, and Google Calendar sync using Next.js and Firebase.
+                <span className="text-amber-500/50 mr-2">-</span>Built a high-concurrency reservation platform with race-condition-safe time-slot locking, dual validation, and a state-driven booking system integrating PhonePe webhooks, automated refunds, and Google Calendar sync using Next.js and Firebase.
               </p>
             </div>
 
@@ -633,7 +628,7 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Row 1 — featured full width */}
+            {/* Row 1 - featured full width */}
             <a
               href="https://github.com/azverndias09/GeneticCarLearner"
               target="_blank"
@@ -663,7 +658,7 @@ function App() {
               </div>
             </a>
 
-            {/* Row 2 — three equal hackathon winners */}
+            {/* Row 2 - three equal hackathon winners */}
             <a
               href="https://github.com/azverndias09/car-pool"
               target="_blank"
