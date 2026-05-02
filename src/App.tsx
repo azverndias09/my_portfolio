@@ -478,13 +478,13 @@ function App() {
                 </h1>
               </div>
               <p className="text-xl md:text-2xl text-amber-300 font-semibold leading-snug max-w-2xl">
-                I build event-driven backend systems and AI workflows that move from idea to production fast.
+                Backend engineer building AI agent systems and event-driven SaaS on FastAPI, AWS, and production-grade automation.
               </p>
               <p className="text-gray-400 leading-relaxed max-w-xl text-sm md:text-base">
-                FastAPI and AWS specialist focused on multi-tenant architecture, reliable automation, and clean user-facing outcomes.
+                Specialized in multi-tenant architecture, AI agent pipelines, and workflow automation, from architecture to deployment.
               </p>
               <div className="flex items-center justify-between md:justify-start w-full md:w-auto md:gap-2.5 pt-1">
-                {['Event-Driven AWS', 'FastAPI Systems', 'AI Integrations'].map((pill) => (
+                {['AI Agent Systems', 'FastAPI · AWS', 'SaaS Backends'].map((pill) => (
                   <span key={pill} className="font-mono text-[11px] sm:text-xs text-center text-amber-300/80 border border-amber-900/40 bg-amber-950/20 px-2 sm:px-2.5 py-1.5 rounded-md whitespace-nowrap">
                     {pill}
                   </span>
