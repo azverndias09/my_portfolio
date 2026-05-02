@@ -54,9 +54,14 @@ const cubiktechProjects: Project[] = [
   {
     title: "Agile Receivables Platform",
     href: "https://agilereceivables.com/",
-    body: "Led backend development of a multi-tenant AWS system, architecting event-driven workflows (FastAPI, SQS, EventBridge) for asynchronous task orchestration. Implemented strict data isolation (Twilio, AWS SES) with RBAC, Stripe integration, and AI voice agents (Retell, Cartesia). Built an invoice syncing engine integrating QuickBooks and Xero APIs to eliminate manual entry.",
-    sub: [],
-    tags: ["FastAPI", "SQS", "EventBridge", "Stripe", "Twilio", "Retell"],
+    body: "Led backend development of a multi-tenant AWS receivables platform designed for concurrent multi-tenant scale.",
+    sub: [
+      { label: "Campaign Engine", text: "Architected an event-driven campaign engine (SQS, EventBridge) for asynchronous multi-channel campaign orchestration and webhook processing across isolated tenant environments." },
+      { label: "Payments", text: "Built Stripe and Stripe Connect integration for subscription management, automated payment workflows, and multi-tenant payment routing; enforced data isolation with RBAC, AWS KMS, Twilio subaccounts, and SES — zero cross-tenant leakage by design." },
+      { label: "AI Voice Agents", text: "Deployed automated AI voice call agents (Retell, Cartesia) for outbound debt collection workflows, reducing manual follow-up overhead." },
+      { label: "Accounting Sync", text: "Built a QuickBooks/Xero sync engine architected for 10,000+ invoice operations, eliminating manual reconciliation — validated through client onboarding demos." },
+    ],
+    tags: ["FastAPI", "SQS", "EventBridge", "Stripe Connect", "Twilio", "Retell"],
   },
   {
     title: "AI Agentic Framework",
@@ -68,7 +73,7 @@ const cubiktechProjects: Project[] = [
   {
     title: "Stateful AI Sales Agent",
     href: undefined as string | undefined,
-    body: "Developed a WhatsApp bot (n8n, OpenAI, LangChain) qualifying leads via the SPIN framework, using Supabase for conversational memory.",
+    body: "Built an automated WhatsApp sales agent (n8n, OpenAI, LangChain) with intent classification, next-best-action recommendations, and graph memory for contextual intelligence — qualifying leads via the SPIN framework to drive calendar bookings, with Supabase for conversational state.",
     sub: [],
     tags: ["n8n", "OpenAI", "LangChain", "Supabase"],
   },
